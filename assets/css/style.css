@@ -6,6 +6,7 @@
     --secondary-color-transparent: rgba(135,184,57, 0.5);
     --dark-color: #252525;
     --dark-color-transparent: rgba(37,37,37, 0.5);
+    --light: #f1f7e4;
 }
 
 * {
@@ -14,15 +15,31 @@
     box-sizing: border-box;
 }
 
+* ul {
+    list-style-type: none;
+}
+
+* a {
+    text-decoration: none;
+}
+* a:visited {
+    color: var(--dark-color);
+    background-color: transparent;
+    text-decoration: none;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--light);
 }
 
 body section {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
-    margin: 20px 30px 20px 0px;
+    flex: 0;
+    margin: 20px 20px 20px 0px;
+    width: 90%;
 }
 
 header {
@@ -37,7 +54,18 @@ header {
 }
 
 header a {
-    color: white;
+    color: var(--light);
+    text-decoration: none;
+}
+/* Overwriting the intial a link rules I setup so the header links stay white / the dark color var */
+header a:visited {
+    color: var(--light);
+    text-decoration: none;
+}
+
+/* affects only the "Tim Primmer" anchor link in the top left */
+header div h1 a:visited {
+    color: var(--dark-color);
     text-decoration: none;
 }
 
@@ -45,8 +73,7 @@ header nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    list-style-type: none;
-    color: white;
+    color: var(--light);
 }
 
 header nav ul li {
@@ -72,7 +99,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    color: white;
+    color: var(--light);
 }
 
 .section-header {
@@ -83,13 +110,17 @@ footer {
     margin: 10px;
     text-align: right;
     font-size: 40px;
+    color: var(--secondary-color);
 }
 
 .section-body {
     border-style: solid;
     border-width: 0px 0px 0px 3px;
+    border-color: var(--secondary-color);
     padding: 10px;
     width: 75%;
+    display: flex;
+    align-items: center;
 }
 
 .work-flexbox {
@@ -97,14 +128,19 @@ footer {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: stretch;
+    width: 100%;
 }
 
 .work-item {
     background-color: var(--dark-color);
     border-style: solid;
     border-width: 4px;
-    border-color: var(--secondary-color);
-    /*background-image: url("../images/herobg.png");*/
+    border-color: var(--main-color);
+    border-radius: 10px;
+    /*
+    background-image: url("../images/herobg.png");
+    */
+    color: var(--dark-color);
     text-align: center;
     margin: 10px;
     min-width: 40%; 
@@ -124,8 +160,9 @@ footer {
 }
 
 .work-item div {
-    background-color: var(--secondary-color);
+    background-color: var(--main-color);
     margin: 0px 0px 10px 0px;
+    border-radius: 0px 10px 10px 0px;
     padding: 10px;
     text-align: left;
 }
@@ -135,13 +172,10 @@ footer div {
 }
 .my-name-box {
     background-color: var(--main-color);
+    border-radius: 0px 10px 10px 0px;
     margin: 10px 0px 15px 0px;
     padding-left: 30px;
     padding-right: 5px;
-}
-
-.my-name-box a {
-    color: black;
 }
 
 .my-name-box:hover {
@@ -160,12 +194,13 @@ footer div {
     background-image: url("../images/herobg.png");
     background-position: center;
     background-size: cover;
+    color: var(--light);
 }
 
 .hero div {
-    background-color: var(--main-color-transparent);
+    background-color: var(--dark-color-transparent);
     border-color: var(--dark-color);
-    border-radius: 25px;
+    border-radius: 10px;
     border-width: 5px;
     border-style: solid;
     padding: 25px;
@@ -175,4 +210,29 @@ footer div {
 .hero h2 {
     font-size: 50px;
     font-weight: bolder;
+}
+
+.contact-me-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+
+.contact-me-info li {
+    border-width: 0px 0px 3px 0px;
+    border-color: var(--secondary-color);
+    border-style: solid;
+    margin: 20px 50px 20px 50px;
+    padding: 0px 5px 5px 5px;
+    font-weight: bolder;
+    color: var(--dark-color);
+    font-size: 20px;
+}
+
+#contact-me {
+    display: flex;
+    align-items: stretch;
 }
