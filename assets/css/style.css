@@ -1,14 +1,35 @@
 /* css comment!! */
 :root {
     --main-color: #d7f57d;
+    --main-color-transparent: rgba(215,245,125, 0.5);
     --secondary-color: #87b839;
+    --secondary-color-transparent: rgba(135,184,57, 0.5);
     --dark-color: #252525;
+    --dark-color-transparent: rgba(37,37,37, 0.5);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body section {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 20px 0px 20px 0px;
+}
+
+.bordered-p {
+    width: 75%;
+    border-style: solid;
+    border-width: 0px 0px 0px 3px;
+    padding: 10px;
 }
 
 header {
@@ -61,8 +82,30 @@ footer {
     color: white;
 }
 
-body section { 
-    padding-top: 50px;
+.section-header {
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 30px;
+    margin: 10px;
+    text-align: right;
+    font-size: 40px;
+}
+
+.work-flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.work-item {
+    background-color: var(--dark-color);
+    border-style: solid;
+    border-width: 4px;
+    border-color: var(--secondary-color);
+    flex-grow: 1;
+    text-align: center;
+    margin: 10px;
 }
 
 footer div { 
@@ -86,9 +129,6 @@ footer div {
     padding-right: 5px;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-}
 
 .hero {
     display: flex;
@@ -98,6 +138,15 @@ body {
     background-image: url("../images/herobg.png");
     background-position: center;
     background-size: cover;
+}
+
+.hero div {
+    background-color: var(--main-color-transparent);
+    border-color: var(--dark-color);
+    border-radius: 25px;
+    border-width: 5px;
+    border-style: solid;
+    padding: 25px;
 }
 
 
