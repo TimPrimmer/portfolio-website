@@ -22,14 +22,7 @@ body section {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    margin: 20px 0px 20px 0px;
-}
-
-.bordered-p {
-    width: 75%;
-    border-style: solid;
-    border-width: 0px 0px 0px 3px;
-    padding: 10px;
+    margin: 20px 30px 20px 0px;
 }
 
 header {
@@ -92,10 +85,18 @@ footer {
     font-size: 40px;
 }
 
+.section-body {
+    border-style: solid;
+    border-width: 0px 0px 0px 3px;
+    padding: 10px;
+    width: 75%;
+}
+
 .work-flexbox {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: stretch;
 }
 
 .work-item {
@@ -103,9 +104,30 @@ footer {
     border-style: solid;
     border-width: 4px;
     border-color: var(--secondary-color);
-    flex-grow: 1;
+    /*background-image: url("../images/herobg.png");*/
     text-align: center;
     margin: 10px;
+    min-width: 40%; 
+    min-height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.work-item:first-child {
+    width: 100%;
+    min-height: 300px;
+}
+  
+.work-item:not(:first-child) {
+    flex: 1;
+}
+
+.work-item div {
+    background-color: var(--secondary-color);
+    margin: 0px 0px 10px 0px;
+    padding: 10px;
+    text-align: left;
 }
 
 footer div { 
