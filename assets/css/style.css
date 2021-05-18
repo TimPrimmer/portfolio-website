@@ -1,7 +1,8 @@
 /* css comment!! */
 :root {
-    --main-color: #fce138;
-    --secondary-color: #024e76;
+    --main-color: #d7f57d;
+    --secondary-color: #87b839;
+    --dark-color: #252525;
 }
 
 * {
@@ -11,12 +12,19 @@
 }
 
 header {
-    background-color: grey;
+    background-color: var(--dark-color);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
 }
 
 header nav ul {
@@ -24,6 +32,7 @@ header nav ul {
     flex-wrap: wrap;
     justify-content: space-around;
     list-style-type: none;
+    color: white;
 }
 
 header nav ul li {
@@ -34,10 +43,31 @@ header nav ul li {
     font-size: 20px;
 }
 
+header nav ul li:hover {
+    border-color: var(--secondary-color);
+}
+
 header nav {
     width: 450px;
 }
 
+footer {
+    background-color: var(--dark-color);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    color: white;
+}
+
+body section { 
+    padding-top: 50px;
+}
+
+footer div { 
+    font-weight: bolder;
+}
 .my-name-box {
     background-color: var(--main-color);
     margin: 10px 0px 15px 0px;
@@ -45,6 +75,33 @@ header nav {
     padding-right: 5px;
 }
 
+.my-name-box a {
+    color: black;
+}
+
+.my-name-box:hover {
+    background-color: var(--secondary-color);
+    margin: 10px 0px 15px 0px;
+    padding-left: 30px;
+    padding-right: 5px;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    background-image: url("../images/herobg.png");
+    background-position: center;
+    background-size: cover;
+}
+
+
+.hero h2 {
+    font-size: 50px;
+    font-weight: bolder;
 }
