@@ -41,6 +41,7 @@ body section {
     flex: 0;
     margin: 20px 20px 20px 0px;
     width: 85%;
+    scroll-margin-top: 5em; /* Adds a gap when we click the top nav links so it accounts for the sticky header space */
 }
 
 header {
@@ -250,9 +251,10 @@ footer div {
 .contact-me-info {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: stretch;
+    flex: 100%;
     width: 100%;
 }
 .contact-me-info a:link {
@@ -273,4 +275,50 @@ footer div {
 #contact-me {
     display: flex;
     align-items: stretch;
+}
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 980px) {
+    .work-item {
+        width: 100%;
+        min-width: 100%; 
+    }
+    body section {
+        width: 95%;
+    }
+    .section-header {
+        font-size: 4vw;
+        width: 20%;
+    }
+    
+    .section-body {
+        width: 80%;
+    }
+}
+  
+  /* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 768px) {
+    header {
+        justify-content: center;
+        align-items: center;
+    }
+    header nav {
+        width: 100%;
+        padding-bottom: 10px;
+    }
+    .my-name-box {
+        border-radius: 10px 10px 10px 10px;
+        margin: 10px 0px 15px 0px;
+        padding-left: 7px;
+        padding-right: 5px;
+    }
+    .contact-me-info li {
+        margin: 10px 25px 10px 25px;
+        font-size: 3vw;
+    }
+}
+  
+  /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 575px) {
+    
 }
