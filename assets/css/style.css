@@ -156,7 +156,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
-    transition: 0.3s;
+    transition: box-shadow 0.3s; /* makes it so the transition time only affects the inner box shadow*/
     box-shadow: inset 0 0 0 1000px rgba(20, 27, 0, 0.5);
     background-position: top;
     background-size: cover;
@@ -188,8 +188,20 @@ footer {
 }
 
 #work-item-3 {
-    background-image: url("../images/horiseon.png"); 
+    background-image: url("../images/mordhau.png"); 
+    background-position: center; /* Looks better to center it*/
 }
+
+#work-item-4 {
+    background-image: url("../images/placeholder1.jpg"); 
+    background-position: center; /* Looks better to center it*/
+}
+
+#work-item-5 {
+    background-image: url("../images/placeholder2.jpg"); 
+    background-position: center; /* Looks better to center it*/
+}
+
 
 
 #work-item-1:hover,
@@ -210,16 +222,16 @@ footer div {
     margin: 10px 0px 15px 0px;
     padding-left: 30px;
     padding-right: 5px;
-    transition: 0.2s;
     color: var(--dark-color);
+    transition: background-color 0.2s; /* makes it so the transition time only affects background color */
 }
 
 .my-name-box:hover {
     background-color: var(--secondary-color);
     margin: 10px 0px 15px 0px;
-    padding-left: 30px;
     padding-right: 5px;
 }
+
 
 
 .hero {
@@ -230,12 +242,11 @@ footer div {
     background-image: url("../images/herobg.png");
     background-position: center;
     background-size: cover;
-    color: var(--light);
 }
 
 .hero div {
-    background-color: var(--dark-color-transparent);
-    border-color: var(--dark-color);
+    background-color: var(--main-color-transparent);
+    border-color: var(--secondary-color);
     border-radius: 10px;
     border-width: 5px;
     border-style: solid;
@@ -246,6 +257,7 @@ footer div {
 .hero h2 {
     font-size: 50px;
     font-weight: bolder;
+    color: var(--dark-color);
 }
 
 .contact-me-info {
@@ -306,6 +318,9 @@ footer div {
         width: 100%;
         padding-bottom: 10px;
     }
+    body section {
+        scroll-margin-top: 7em;
+    }
     .my-name-box {
         border-radius: 10px 10px 10px 10px;
         margin: 10px 0px 15px 0px;
@@ -320,5 +335,19 @@ footer div {
   
   /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
+    .hero {
+        height: 150px;
+    }
+
+    .hero div {
+        padding: 10px;
+    }
     
+    .hero h2 {
+        font-size: 40px;
+    }
+
+    header nav ul a {
+        font-size: 4vw;
+    }
 }
