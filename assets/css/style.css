@@ -133,14 +133,15 @@ footer div {
 }
 
 .hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 250px;
     background-image: url("../images/herobg.png");
     background-position: center;
     background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 
 .hero div {
     /*
@@ -155,6 +156,10 @@ footer div {
     border-width: 5px;
     border-style: solid;
     padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25px;
 }
 
 
@@ -346,6 +351,14 @@ footer div {
         margin: 10px 25px 10px 25px;
         font-size: 3vw; /* set the font to scale based on the viewport width */
     }
+
+    .hero {
+        height: 200px; /* reduces size of hero banner image */
+    }
+
+    .hero h2 {
+        font-size: 6vw;
+    }
 }
   
  
@@ -360,9 +373,6 @@ footer div {
         padding: 10px;
     }
     
-    .hero h2 {
-        font-size: 40px;
-    }
 
     header nav ul a {
         font-size: 4vw; /* set the font to scale based on the viewport width */
