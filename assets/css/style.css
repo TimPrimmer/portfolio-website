@@ -1,4 +1,4 @@
-/* css comment!! */
+/* Website global variables, for now just colors */
 :root {
     --main-color: #d7f57d;
     --main-color-transparent: rgba(215,245,125, 0.5);
@@ -6,7 +6,8 @@
     --secondary-color-transparent: rgba(135,184,57, 0.5);
     --dark-color: #252525;
     --dark-color-transparent: rgba(37,37,37, 0.5);
-    --light: #f1f7e4;
+    --light-color: #f1f7e4;
+    --light-color-transparent: rgba(241,247,228, 0.5);
 }
 
 * {
@@ -16,11 +17,11 @@
 }
 
 * ul {
-    list-style-type: none;
+    list-style-type: none; /* gets rid of all list styling, aka the dots */
 }
 
 * a {
-    text-decoration: none;
+    text-decoration: none; /* gets rid of all link styling */
 }
 
 * a:visited {
@@ -31,7 +32,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--light);
+    background-color: var(--light-color);
 }
 
 body section {
@@ -56,12 +57,12 @@ header {
 }
 
 header a {
-    color: var(--light);
+    color: var(--light-color);
     text-decoration: none;
 }
 /* Overwriting the intial a link rules I setup so the header links stay white / the dark color var */
 header a:visited {
-    color: var(--light);
+    color: var(--light-color);
     text-decoration: none;
 }
 
@@ -80,7 +81,7 @@ header nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    color: var(--light);
+    color: var(--light-color);
 }
 
 header nav ul li {
@@ -93,7 +94,7 @@ header nav ul li {
 }
 
 header nav ul li:hover {
-    border-color: var(--secondary-color);
+    border-color: var(--secondary-color); /* changes the color of the border when we hover over the nav bar links */
 }
 
 header nav {
@@ -107,7 +108,60 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    color: var(--light);
+    color: var(--light-color);
+}
+
+footer div { 
+    font-weight: bolder;
+}
+
+
+.my-name-box {
+    background-color: var(--main-color);
+    border-radius: 0px 10px 10px 0px;
+    margin: 10px 0px 15px 0px;
+    padding-left: 30px;
+    padding-right: 5px;
+    color: var(--dark-color);
+    transition: background-color 0.2s; /* makes it so the transition time only affects background color */
+}
+
+.my-name-box:hover {
+    background-color: var(--secondary-color);
+    margin: 10px 0px 15px 0px;
+    padding-right: 5px;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    background-image: url("../images/herobg.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.hero div {
+    /*
+    background-color: var(--main-color-transparent);
+    border-color: var(--secondary-color);
+
+    alternate styling for the background box behind "My portfolio" */
+
+    background-color: var(--light-color-transparent);
+    border-color: var(--main-color-transparent);
+    border-radius: 10px;
+    border-width: 5px;
+    border-style: solid;
+    padding: 25px;
+}
+
+
+.hero h2 {
+    font-size: 50px;
+    font-weight: bolder;
+    color: var(--dark-color);
 }
 
 .section-header {
@@ -131,6 +185,39 @@ footer {
     align-items: center;
 }
 
+
+#contact-me {
+    display: flex;
+    align-items: stretch;
+}
+
+.contact-me-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: stretch;
+    flex: 100%;
+    width: 100%;
+}
+
+.contact-me-info a:link {
+    color: var(--dark-color);
+}
+
+.contact-me-info li {
+    border-width: 0px 0px 3px 0px;
+    border-color: var(--secondary-color);
+    border-style: solid;
+    margin: 20px 50px 20px 50px;
+    padding: 0px 5px 5px 5px;
+    font-weight: bolder;
+    color: var(--dark-color);
+    font-size: 20px;
+}
+
+
+/* styling for the div containing all the work boxes */
 .work-flexbox {
     display: flex;
     flex-wrap: wrap;
@@ -139,6 +226,7 @@ footer {
     width: 100%;
 }
 
+/* styling for all of the work/portfolio squares */
 .work-item {
     background-color: var(--dark-color);
     border-style: solid;
@@ -157,18 +245,23 @@ footer {
     flex-wrap: wrap;
     align-items: flex-end;
     transition: box-shadow 0.3s; /* makes it so the transition time only affects the inner box shadow*/
-    box-shadow: inset 0 0 0 1000px rgba(20, 27, 0, 0.5);
+    box-shadow: inset 0 0 0 1000px rgba(20, 27, 0, 0.5);  /* the black dim on each work box */
     background-position: top;
     background-size: cover;
 }
 
-.work-item:first-child {
+.work-item  p { /* Description text in the work boxes */
+    font-size: 13px;
+    padding-top: 5px
+}
+
+.work-item:first-child { /* this is how to get the first work box to be larger and take up the whole space */
     width: 100%;
-    min-height: 300px;
+    min-height: 300px; 
 }
   
 .work-item:not(:first-child) {
-    flex: 1;
+    flex: 1; /* sets the other work boxes (non-first) to take up all the space available */
 }
 
 .work-item div {
@@ -202,92 +295,14 @@ footer {
     background-position: center; /* Looks better to center it*/
 }
 
-
-
 #work-item-1:hover,
 #work-item-2:hover,
 #work-item-3:hover,
 #work-item-4:hover,
 #work-item-5:hover {
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,0);
-}
+} /* removing the dim when hovering over work item */
 
-footer div { 
-    font-weight: bolder;
-}
-
-.my-name-box {
-    background-color: var(--main-color);
-    border-radius: 0px 10px 10px 0px;
-    margin: 10px 0px 15px 0px;
-    padding-left: 30px;
-    padding-right: 5px;
-    color: var(--dark-color);
-    transition: background-color 0.2s; /* makes it so the transition time only affects background color */
-}
-
-.my-name-box:hover {
-    background-color: var(--secondary-color);
-    margin: 10px 0px 15px 0px;
-    padding-right: 5px;
-}
-
-
-
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 250px;
-    background-image: url("../images/herobg.png");
-    background-position: center;
-    background-size: cover;
-}
-
-.hero div {
-    background-color: var(--main-color-transparent);
-    border-color: var(--secondary-color);
-    border-radius: 10px;
-    border-width: 5px;
-    border-style: solid;
-    padding: 25px;
-}
-
-
-.hero h2 {
-    font-size: 50px;
-    font-weight: bolder;
-    color: var(--dark-color);
-}
-
-.contact-me-info {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    align-items: stretch;
-    flex: 100%;
-    width: 100%;
-}
-.contact-me-info a:link {
-    color: var(--dark-color);
-}
-
-.contact-me-info li {
-    border-width: 0px 0px 3px 0px;
-    border-color: var(--secondary-color);
-    border-style: solid;
-    margin: 20px 50px 20px 50px;
-    padding: 0px 5px 5px 5px;
-    font-weight: bolder;
-    color: var(--dark-color);
-    font-size: 20px;
-}
-
-#contact-me {
-    display: flex;
-    align-items: stretch;
-}
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
@@ -299,7 +314,7 @@ footer div {
         width: 95%;
     }
     .section-header {
-        font-size: 4vw;
+        font-size: 4vw; /* set the font to scale based on the viewport width */
         width: 20%;
     }
     
@@ -314,12 +329,12 @@ footer div {
         justify-content: center;
         align-items: center;
     }
-    header nav {
+    header nav { /* above and below sections responsible for the nav bar centering and going on 2 lines */
         width: 100%;
         padding-bottom: 10px;
     }
     body section {
-        scroll-margin-top: 7em;
+        scroll-margin-top: 7em; /* added more space to the scroll margin so when we click on the nav links the sections arent covered up by the nav bar itself */
     }
     .my-name-box {
         border-radius: 10px 10px 10px 10px;
@@ -329,15 +344,17 @@ footer div {
     }
     .contact-me-info li {
         margin: 10px 25px 10px 25px;
-        font-size: 3vw;
+        font-size: 3vw; /* set the font to scale based on the viewport width */
     }
 }
   
-  /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+ 
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
     .hero {
-        height: 150px;
+        height: 150px; /* reduces size of hero banner image */
     }
+    
 
     .hero div {
         padding: 10px;
@@ -348,6 +365,6 @@ footer div {
     }
 
     header nav ul a {
-        font-size: 4vw;
+        font-size: 4vw; /* set the font to scale based on the viewport width */
     }
 }
