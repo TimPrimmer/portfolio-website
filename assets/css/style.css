@@ -278,7 +278,7 @@ footer div {
 }
 
 #work-item-1 {
-    background-image: url("../images/runbuddy.png");
+    background-image: url("../images/parktime.png");
 }
 
 #work-item-2 {
@@ -291,8 +291,7 @@ footer div {
 }
 
 #work-item-4 {
-    background-image: url("../images/placeholder1.jpg"); 
-    background-position: center; /* Looks better to center it*/
+    background-image: url("../images/runbuddy.png"); 
 }
 
 #work-item-5 {
